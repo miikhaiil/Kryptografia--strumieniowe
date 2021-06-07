@@ -1,0 +1,66 @@
+﻿<Window x:Class="strumieniowe.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:strumieniowe"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <GroupBox Grid.Row="0" Grid.ColumnSpan="2" Header="Ciąg bitowy" Margin="5">
+            <TextBox Name="Data">11101001</TextBox>
+        </GroupBox>
+        <GroupBox Header="Synchronous Stream Cipher" Grid.RowSpan="2" Grid.Row="1" Margin="5">
+            <StackPanel>
+                <StackPanel Height="auto">
+                    <Label>Wielomian:</Label>
+                    <TextBox Name="SSCpolynomial">1001</TextBox>
+                </StackPanel>
+                <StackPanel Height="auto">
+                    <Label>Seed:</Label>
+                    <TextBox Name="SSCseed">0010</TextBox>
+                </StackPanel>
+                <StackPanel Height="auto">
+                    <Label>Wynik:</Label>
+                    <TextBox Name="SSCresult"></TextBox>
+                </StackPanel>
+                <StackPanel Height="auto">
+                    <Label>Deszyfracja:</Label>
+                    <TextBox Name="SSCdecipher"></TextBox>
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="Ciphertext Autokey" Grid.RowSpan="2" Grid.Row="1" Grid.Column="1" Margin="5">
+            <StackPanel>
+                <StackPanel Height="auto">
+                    <Label>Wielomian:</Label>
+                    <TextBox Name="CApolynomial">1001</TextBox>
+                </StackPanel>
+                <StackPanel Height="auto">
+                    <Label>Seed:</Label>
+                    <TextBox Name="CAseed">0011</TextBox>
+                </StackPanel>
+                <StackPanel Height="auto">
+                    <Label>Wynik:</Label>
+                    <TextBox Name="CAresult"></TextBox>
+                </StackPanel>
+                <StackPanel Height="auto">
+                    <Label>Deszyfracja:</Label>
+                    <TextBox Name="CAdecipher"></TextBox>
+                </StackPanel>
+            </StackPanel>
+            
+        </GroupBox>
+        <Button Grid.Column="1" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="5,0,5,5" Padding="15,5" Click="onClickCipher">Szyfruj</Button>
+    </Grid>
+</Window>
